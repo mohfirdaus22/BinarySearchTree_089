@@ -13,7 +13,18 @@ namespace BinarySearchTree_089
         public Node rightchild;
 
         //Constructor for the node class
+        public Node(string i, Node l, Node r)
+        {
+            info = i;
+            leftchild = l;
+            rightchild = r;
+
+        }
     }
+    // A node class consist os three things, the information, referenceto the
+    // right child, and reference to the left child
+
+
     internal class Program
     {
         static void Main(string[] args)
