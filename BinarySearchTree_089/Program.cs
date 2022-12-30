@@ -24,6 +24,43 @@ namespace BinarySearchTree_089
     // A node class consist os three things, the information, referenceto the
     // right child, and reference to the left child
 
+    class BinaryTree
+    {
+        public Node ROOT;
+
+        public BinaryTree()
+        {
+            ROOT = null; // Initializing ROOT to null
+        }
+
+        public void insert(string element) // insert a node in the binarry search tree
+        {
+            Node tmp, parent = null, currentNode = null;
+            Search(element, ref parent, ref currentNode);
+            if (currentNode != null)  //check if the node to be inserted already inserted or not
+            {
+                Console.WriteLine(" Duplicated words not allowed");
+                return;
+            }
+            else  // if the specified node is not present
+            {
+                 tmp = new Node(element, null, null); //creates a Node
+                if (parent == null) //if the tree is empty
+                {
+                    ROOT = tmp;
+                }
+                else if (String.Compare(element,parent.info) < 0)
+                {
+                    parent.leftchild = tmp;
+                }
+                else
+                {
+                    parent.rightchild = tmp;
+                }
+            }
+        }
+    }
+
 
     internal class Program
     {
